@@ -29,9 +29,15 @@ curl https://raw.githubusercontent.com/AhmedAlaa23/ubuntu-server-setup/main/stac
 ```
 
 ## Domain (Nginx & Lets Encrypt)
+### 1. On the domain provider (etc Namecheap) update the NAMESERVERS (DNS) to point to the server
+
+### 2. On the Server (etc Digitalocean) Add '@' and 'www' A records in the server
+
+### 3. Run the Script
 1. Add the site to Nginx sites-available
 2. Add Let's Encrypt to that domain
 
+
 ```bash
-curl https://raw.githubusercontent.com/AhmedAlaa23/ubuntu-server-setup/main/domain-setup.sh | bash
+sudo curl https://raw.githubusercontent.com/AhmedAlaa23/ubuntu-server-setup/main/domain-setup.sh | bash
 ```
