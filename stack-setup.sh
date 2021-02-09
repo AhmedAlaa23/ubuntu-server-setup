@@ -48,14 +48,14 @@ then
 	SELECT user, host, plugin from user;
 	FLUSH PRIVILEGES;
 	exit
-	
+
 	systemctl status mysql.service
 fi
 
 if [ "I_NGINIX" == "y" ] || [ "I_NGINIX" == "yes" ]
 then
-	echo "__ Installing Nginix"
+	echo "__ Installing Nginx"
 	sudo apt install nginx -y
 	systemctl status nginx
-	echo "__ Nginix Installed"
+	echo "__ Nginx Installed"
 fi

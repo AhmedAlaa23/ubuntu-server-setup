@@ -21,6 +21,13 @@ bash init-setup.sh
 
 ## Server Stack Setup
 
-### Server for apps
-1. Install Nodejs & Update NPM
-2. Install pm2
+### Server for apps (Options)
+- Install Nodejs & Install pm2
+- Install MYSQL & Configure MySQL
+- Install Nginx
+
+```bash
+curl -o stack-setup.sh https://raw.githubusercontent.com/AhmedAlaa23/ubuntu-server-setup/main/stack-setup.sh
+
+bash init-setup.sh
+```
