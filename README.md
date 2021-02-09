@@ -12,9 +12,7 @@ Ubuntu (Linux) Server Setup Bash Script
 
 
 ```bash
-curl -o init-setup.sh https://raw.githubusercontent.com/AhmedAlaa23/ubuntu-server-setup/main/init-setup.sh
-
-bash init-setup.sh
+curl https://raw.githubusercontent.com/AhmedAlaa23/ubuntu-server-setup/main/init-setup.sh | bash
 ```
 
 <br>
@@ -27,7 +25,13 @@ bash init-setup.sh
 - Install Nginx
 
 ```bash
-curl -o stack-setup.sh https://raw.githubusercontent.com/AhmedAlaa23/ubuntu-server-setup/main/stack-setup.sh
+curl https://raw.githubusercontent.com/AhmedAlaa23/ubuntu-server-setup/main/stack-setup.sh | bash
+```
 
-bash stack-setup.sh
+## Domain (Nginx & Lets Encrypt)
+1. Add the site to Nginx sites-available
+2. Add Let's Encrypt to that domain
+
+```bash
+curl https://raw.githubusercontent.com/AhmedAlaa23/ubuntu-server-setup/main/domain-setup.sh | bash
 ```

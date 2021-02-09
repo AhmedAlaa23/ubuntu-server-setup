@@ -41,9 +41,6 @@ echo "__ Root Login Disabled"
 echo "__ Reloading sshd"
 sudo systemctl reload sshd
 
-echo "__ Deleting The Script File"
-rm -- "$0"
-
 echo "__ Switching to $USER_NAME User"
 cd ./../home/$USER_NAME
 su $USER_NAME

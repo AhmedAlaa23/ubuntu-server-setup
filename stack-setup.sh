@@ -54,6 +54,3 @@ then
 	echo "__ Checking That mysql service is running"
 	systemctl status mysql.service
 fi
-
-echo "__ Deleting The Script File"
-rm -- "$0"
