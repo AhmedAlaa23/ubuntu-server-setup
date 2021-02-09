@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "__ Ubuntu Setup Bash Script"
+echo "__ Ubuntu Init Setup Bash Script"
 
 echo "__ Update && Upgrade && Clean"
 

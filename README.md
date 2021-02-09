@@ -1,10 +1,26 @@
 # ubuntu-server-setup
 Ubuntu (Linux) Server Setup Bash Script
 
-## Just Run These Commands
+## Init Setup
+
+1. Update && Upgrade
+2. Add New User
+3. Granting The New User Administrative Privileges
+4. Copying The SSH Key to the New User
+5. Setting up Firewall (uwf allow OpenSSH,http,https)
+6. Disabling Root Login (PermitRootLogin no) in '/etc/ssh/sshd_config'
+
 
 ```bash
 curl -o init-setup.sh https://raw.githubusercontent.com/AhmedAlaa23/ubuntu-server-setup/main/init-setup.sh
 
 bash init-setup.sh
 ```
+
+<br>
+
+## Server Stack Setup
+
+### Server for apps
+1. Install Nodejs & Update NPM
+2. Install pm2
