@@ -3,7 +3,7 @@ echo "__ Ubuntu Init Setup Bash Script"
 
 echo "__ Update && Upgrade && Clean"
 
-sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove && sudo apt clean
+sudo apt -y update && sudo apt -y upgrade && sudo apt autoremove && sudo apt clean
 
 #=======================================
 

@@ -3,11 +3,11 @@ echo "__ Ubuntu Init Setup Bash Script"
 
 echo "__ Choose What to Install"
 
-read -p "__ Install NODE ? (y/n)" I_NODE
-read -p "__ Install MYSQL ? (y/n)" I_MYSQL
-read -p "__ Install Nginix ? (y/n)" I_NGINIX
+read -p "__ Install NODE ? (y/n) " I_NODE
+read -p "__ Install MYSQL ? (y/n) " I_MYSQL
+read -p "__ Install Nginix ? (y/n) " I_NGINIX
 
-if [ "I_NODE" == "y" ] || [ "I_NODE" == "yes" ]
+if [ "$I_NODE" == "y" ] || [ "$I_NODE" == "yes" ]
 then
 	echo "__ Installing Nodejs"
 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
@@ -17,14 +17,14 @@ then
 	echo "__ Updating NPM"
 	npm install -g npm
 
-	echo "__ Installing Pm2 (npm -g)"
+	echo "__ Installing Pm2 (-g)"
 	npm install -g pm2
 fi
 
-if [ "I_MYSQL" == "y" ] || [ "I_MYSQL" == "yes" ]
+if [ "$I_MYSQL" == "y" ] || [ "$I_MYSQL" == "yes" ]
 then
 	echo "__ Installing MYSQL"
-	sudo apt install mysql-server -y
+	sudo apt install -y mysql-server
 	echo "__ Running mysql_secure_installation"
 	sudo mysql_secure_installation
 	echo "__ MYSQL Installed"
@@ -52,10 +52,13 @@ then
 	systemctl status mysql.service
 fi
 
-if [ "I_NGINIX" == "y" ] || [ "I_NGINIX" == "yes" ]
+if [ "$I_NGINIX" == "y" ] || [ "$I_NGINIX" == "yes" ]
 then
 	echo "__ Installing Nginx"
-	sudo apt install nginx -y
+	sudo apt install -y nginx
 	systemctl status nginx
 	echo "__ Nginx Installed"
 fi
+
+echo "__ Deleting The Script File"
+rm -- "$0"

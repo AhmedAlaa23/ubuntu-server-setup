@@ -29,5 +29,5 @@ bash init-setup.sh
 ```bash
 curl -o stack-setup.sh https://raw.githubusercontent.com/AhmedAlaa23/ubuntu-server-setup/main/stack-setup.sh
 
-bash init-setup.sh
+bash stack-setup.sh
 ```
