@@ -14,7 +14,23 @@ then
 	echo "__ Domain Already Exist !"
 else
 	echo "__ Adding site file to sites-available"
-	sudo echo "
+	# sudo echo "
+	# server {
+	# 	listen 80;
+	# 	listen [::]:80;
+
+	# 	root /var/www/$DOMAIN_NAME;
+	# 	index index.html;
+
+	# 	server_name $DOMAIN_NAME www.$DOMAIN_NAME;
+
+	# 	location / {
+	# 		try_files \$uri \$uri/ =404;
+	# 	}
+	# }
+	# " >> /etc/nginx/sites-available/$DOMAIN_NAME
+
+	sudo cat > /etc/nginx/sites-available/$DOMAIN_NAME << EOF
 	server {
 		listen 80;
 		listen [::]:80;
@@ -28,7 +44,7 @@ else
 			try_files \$uri \$uri/ =404;
 		}
 	}
-	" >> /etc/nginx/sites-available/$DOMAIN_NAME
+	EOF
 
 	echo "__ Creating Link in sites-enabled"
 	sudo ln -s /etc/nginx/sites-available/$DOMAIN_NAME /etc/nginx/sites-enabled/
