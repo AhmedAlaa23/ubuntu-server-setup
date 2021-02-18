@@ -4,7 +4,7 @@ echo "__ Domain Setup Bash Script"
 read -p "__ Domain Name ? " DOMAIN_NAME
 
 echo "__ Removing The Default Server File in sites-enabled"
-sudo [ -e /etc/nginx/sites-enabled/default ] && rm /etc/nginx/sites-enabled/default
+sudo [ -e /etc/nginx/sites-enabled/default ] && sudo rm /etc/nginx/sites-enabled/default
 
 echo "__ Uncommenting 'server_names_hash_bucket_size 64'"
 sudo sed -i '/	# server_names_hash_bucket_size 64;/c\	server_names_hash_bucket_size 64;' /etc/nginx/nginx.conf
@@ -31,7 +31,7 @@ else
 	" >> /etc/nginx/sites-available/$DOMAIN_NAME
 
 	echo "__ Creating Link in sites-enabled"
-	ln -s /etc/nginx/sites-available/$DOMAIN_NAME /etc/nginx/sites-enabled/
+	sudo ln -s /etc/nginx/sites-available/$DOMAIN_NAME /etc/nginx/sites-enabled/
 
 	echo "__ Checking Nginx"
 	sudo nginx -t

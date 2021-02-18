@@ -41,7 +41,7 @@ bash <(curl -s https://raw.githubusercontent.com/AhmedAlaa23/ubuntu-server-setup
 
 
 ```bash
-sudo bash <(curl -s https://raw.githubusercontent.com/AhmedAlaa23/ubuntu-server-setup/main/domain-setup.sh)
+bash <(curl -s https://raw.githubusercontent.com/AhmedAlaa23/ubuntu-server-setup/main/domain-setup.sh)
 ```
 
 <br/>
@@ -53,5 +53,5 @@ sudo bash <(curl -s https://raw.githubusercontent.com/AhmedAlaa23/ubuntu-server-
 
 
 ```bash
-sudo bash <(curl -s https://raw.githubusercontent.com/AhmedAlaa23/ubuntu-server-setup/main/app-setup.sh)
+bash <(curl -s https://raw.githubusercontent.com/AhmedAlaa23/ubuntu-server-setup/main/app-setup.sh)
 ```
