@@ -12,7 +12,7 @@ Ubuntu (Linux) Server Setup Bash Script
 
 
 ```bash
-curl https://raw.githubusercontent.com/AhmedAlaa23/ubuntu-server-setup/main/init-setup.sh | bash
+bash <(curl -s https://raw.githubusercontent.com/AhmedAlaa23/ubuntu-server-setup/main/init-setup.sh)
 ```
 
 <br/>
@@ -25,7 +25,7 @@ curl https://raw.githubusercontent.com/AhmedAlaa23/ubuntu-server-setup/main/init
 - Install Nginx
 
 ```bash
-curl https://raw.githubusercontent.com/AhmedAlaa23/ubuntu-server-setup/main/stack-setup.sh | bash
+bash <(curl -s https://raw.githubusercontent.com/AhmedAlaa23/ubuntu-server-setup/main/stack-setup.sh)
 ```
 
 <br/>
@@ -41,7 +41,7 @@ curl https://raw.githubusercontent.com/AhmedAlaa23/ubuntu-server-setup/main/stac
 
 
 ```bash
-sudo curl https://raw.githubusercontent.com/AhmedAlaa23/ubuntu-server-setup/main/domain-setup.sh | bash
+sudo bash <(curl -s https://raw.githubusercontent.com/AhmedAlaa23/ubuntu-server-setup/main/domain-setup.sh)
 ```
 
 <br/>
@@ -53,5 +53,5 @@ sudo curl https://raw.githubusercontent.com/AhmedAlaa23/ubuntu-server-setup/main
 
 
 ```bash
-sudo curl https://raw.githubusercontent.com/AhmedAlaa23/ubuntu-server-setup/main/app-setup.sh | bash
+sudo bash <(curl -s https://raw.githubusercontent.com/AhmedAlaa23/ubuntu-server-setup/main/app-setup.sh)
 ```
