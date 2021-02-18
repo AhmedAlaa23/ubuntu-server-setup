@@ -1,13 +1,9 @@
 #!/bin/bash
 echo "__ Setting Up Email Server Bash Script"
 
-echo "__ Installing Postfix"
-sudo DEBIAN_PRIORITY=low apt -y install postfix
-# the command below to rerun the postfix configuration
-# sudo dpkg-reconfigure postfix
-
-echo "__ Configuring Postfix"
-sudo postconf -e 'home_mailbox= Maildir/'
+sudo DEBIAN_PRIORITY=low apt install postfix
+sudo dpkg-reconfigure postfix
+sudo nano /etc/postfix/main.cf
 
 
 
