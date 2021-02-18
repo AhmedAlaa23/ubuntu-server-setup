@@ -8,7 +8,7 @@ sudo apt -y update && sudo apt -y upgrade && sudo apt autoremove && sudo apt cle
 #=======================================
 
 echo "__ Adding New User"
-read -p "Enter The New user Name: " USER_NAME
+read -p "Enter The New user Name: " USER_NAME </dev/tty
 adduser $USER_NAME
 
 echo "__ Granting The New User Administrative Privileges"

@@ -15,7 +15,7 @@ Ubuntu (Linux) Server Setup Bash Script
 curl https://raw.githubusercontent.com/AhmedAlaa23/ubuntu-server-setup/main/init-setup.sh | bash
 ```
 
-<br>
+<br/>
 
 ## Server Stack Setup
 
@@ -27,6 +27,8 @@ curl https://raw.githubusercontent.com/AhmedAlaa23/ubuntu-server-setup/main/init
 ```bash
 curl https://raw.githubusercontent.com/AhmedAlaa23/ubuntu-server-setup/main/stack-setup.sh | bash
 ```
+
+<br/>
 
 ## Domain (Nginx & Lets Encrypt)
 ### 1. On the domain provider (etc Namecheap) update the NAMESERVERS (DNS) to point to the server
@@ -40,4 +42,16 @@ curl https://raw.githubusercontent.com/AhmedAlaa23/ubuntu-server-setup/main/stac
 
 ```bash
 sudo curl https://raw.githubusercontent.com/AhmedAlaa23/ubuntu-server-setup/main/domain-setup.sh | bash
+```
+
+<br/>
+
+## Apps (clone from github and add/configure to server)
+1. Clone the App from github to the server (www)
+2. Run the App if it's runnable
+3. Add it's location to Nginx
+
+
+```bash
+sudo curl https://raw.githubusercontent.com/AhmedAlaa23/ubuntu-server-setup/main/app-setup.sh | bash
 ```

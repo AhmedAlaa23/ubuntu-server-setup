@@ -3,7 +3,7 @@ echo "__ Domain Setup Bash Script"
 
 read -p "__ Domain Name ? " DOMAIN_NAME
 
-echo "__ Removing The Defualt Server File in sites-enabled"
+echo "__ Removing The Default Server File in sites-enabled"
 sudo [ -e /etc/nginx/sites-enabled/default ] && rm /etc/nginx/sites-enabled/default
 
 echo "__ Uncommenting 'server_names_hash_bucket_size 64'"
@@ -51,7 +51,9 @@ else
 	echo "__ Verifying Certbot Auto-Renewal"
 	sudo systemctl status certbot.timer
 	sudo certbot renew --dry-run
+
+	# systemctl list-timers
 fi
 
-echo "__ Nginix Status"
+echo "__ Nginx Status"
 sudo systemctl status nginx
