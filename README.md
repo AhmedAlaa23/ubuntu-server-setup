@@ -41,7 +41,9 @@ bash <(curl -s https://raw.githubusercontent.com/AhmedAlaa23/ubuntu-server-setup
 
 
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/AhmedAlaa23/ubuntu-server-setup/main/domain-setup.sh)
+curl -o domain-setup.sh -s https://raw.githubusercontent.com/AhmedAlaa23/ubuntu-server-setup/main/domain-setup.sh
+
+bash domain-setup.sh
 ```
 
 <br/>
