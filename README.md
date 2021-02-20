@@ -41,9 +41,7 @@ bash <(curl -s https://raw.githubusercontent.com/AhmedAlaa23/ubuntu-server-setup
 
 
 ```bash
-curl -o domain-setup.sh -s https://raw.githubusercontent.com/AhmedAlaa23/ubuntu-server-setup/main/domain-setup.sh
-
-bash domain-setup.sh
+curl -o domain-setup.sh -s https://raw.githubusercontent.com/AhmedAlaa23/ubuntu-server-setup/main/domain-setup.sh && sudo bash domain-setup.sh
 ```
 
 <br/>

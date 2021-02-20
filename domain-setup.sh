@@ -2,6 +2,14 @@
 echo "__ Domain Setup Bash Script"
 
 read -p "__ Domain Name ? " DOMAIN_NAME
+read -p "__ Is It a Sub Domain ? (y/n) " IS_SUB_DOMAIN
+
+if [ "$IS_SUB_DOMAIN" == "y" ]
+then
+	SERVER_NAME = "server_name $DOMAIN_NAME;"
+else
+	SERVER_NAME = "server_name $DOMAIN_NAME www.$DOMAIN_NAME;"
+fi
 
 echo "__ Removing The Default Server File in sites-enabled"
 sudo [ -e /etc/nginx/sites-enabled/default ] && sudo rm /etc/nginx/sites-enabled/default
@@ -22,7 +30,7 @@ else
 		root /var/www/$DOMAIN_NAME;
 		index index.html;
 
-		server_name $DOMAIN_NAME www.$DOMAIN_NAME;
+		$SERVER_NAME
 
 		location / {
 			try_files \$uri \$uri/ =404;
@@ -46,7 +54,12 @@ else
 	sudo apt -y install certbot python3-certbot-nginx
 
 	echo "__ Obtaining an SSL Certificate"
-	sudo certbot --nginx -d $DOMAIN_NAME -d www.$DOMAIN_NAME
+	if [ "$IS_SUB_DOMAIN" == "y" ]
+	then
+		sudo certbot --nginx -d $DOMAIN_NAME
+	else
+		sudo certbot --nginx -d $DOMAIN_NAME -d www.$DOMAIN_NAME
+	fi
 
 	echo "__ Verifying Certbot Auto-Renewal"
 	sudo systemctl status certbot.timer
