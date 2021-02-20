@@ -4,11 +4,10 @@ echo "__ Domain Setup Bash Script"
 read -p "__ Domain Name ? " DOMAIN_NAME
 read -p "__ Is It a Sub Domain ? (y/n) " IS_SUB_DOMAIN
 
+SERVER_NAME="server_name $DOMAIN_NAME www.$DOMAIN_NAME;"
 if [ "$IS_SUB_DOMAIN" == "y" ]
 then
-	SERVER_NAME = "server_name $DOMAIN_NAME;"
-else
-	SERVER_NAME = "server_name $DOMAIN_NAME www.$DOMAIN_NAME;"
+	SERVER_NAME="server_name $DOMAIN_NAME;"
 fi
 
 echo "__ Removing The Default Server File in sites-enabled"
@@ -23,19 +22,19 @@ then
 else
 	echo "__ Adding site file to sites-available"
 	sudo echo "
-	server {
-		listen 80;
-		listen [::]:80;
+server {
+	listen 80;
+	listen [::]:80;
 
-		root /var/www/$DOMAIN_NAME;
-		index index.html;
+	root /var/www/$DOMAIN_NAME;
+	index index.html;
 
-		$SERVER_NAME
+	$SERVER_NAME
 
-		location / {
-			try_files \$uri \$uri/ =404;
-		}
+	location / {
+		try_files \$uri \$uri/ =404;
 	}
+}
 	" >> /etc/nginx/sites-available/$DOMAIN_NAME
 
 	echo "__ Creating Link in sites-enabled"
