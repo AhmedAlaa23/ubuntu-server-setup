@@ -29,7 +29,7 @@ server {
 	root /var/www/$DOMAIN_NAME;
 	index index.html;
 
-	$SERVER_NAME
+	server_name $SERVER_NAME;
 
 	location / {
 		try_files \$uri \$uri/ =404;
