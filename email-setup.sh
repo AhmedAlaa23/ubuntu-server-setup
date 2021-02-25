@@ -57,19 +57,6 @@ server {
 
 	echo "__ Restarting Nginx"
 	sudo systemctl restart nginx
-
-	#======================================
-	echo "__ Configuring Let's Encrypt"
-
-	echo "__ Installing Certbot"
-	sudo apt -y install certbot python3-certbot-nginx
-
-	echo "__ Obtaining an SSL Certificate"
-	sudo certbot --nginx -d $MAIL_SERVER_NAME
-
-	echo "__ Verifying Certbot Auto-Renewal"
-	sudo systemctl status certbot.timer
-	sudo certbot renew --dry-run
 fi
 
 echo "__ Nginx Status"
