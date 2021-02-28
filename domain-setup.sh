@@ -22,17 +22,30 @@ then
 else
 	echo "__ Adding site file to sites-available"
 	sudo echo "
+
+upstream $DOMAIN_NAME{
+	server 127.0.0.1;
+	keepalive 64;
+}
+
 server {
 	listen 80;
 	listen [::]:80;
 
-	root /var/www/$DOMAIN_NAME;
-	index index.html;
-
 	server_name $SERVER_NAME;
 
 	location / {
-		try_files \$uri \$uri/ =404;
+		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+		proxy_set_header X-Real-IP $remote_addr;
+		proxy_set_header Host $http_host;
+
+		proxy_http_version 1.1;
+		proxy_set_header Upgrade $http_upgrade;
+		proxy_set_header Connection "up grade";
+		
+		proxy_pass http://$DOMAIN_NAME/;
+		proxy_redirect off;
+		proxy_read_timeout 240s;
 	}
 }
 	" >> /etc/nginx/sites-available/$DOMAIN_NAME

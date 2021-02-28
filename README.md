@@ -57,18 +57,18 @@ bash <(curl -s https://raw.githubusercontent.com/AhmedAlaa23/ubuntu-server-setup
 
 ## Email Server (mailcow-dockerized)
 
-### 1. create A record (hostname: mail, value: your server ip)
+#### 1. create A record (hostname: **mail**, value: **your-server-ip**)
 
-### 2. create mx record to point to mail.yourdomain.com (hostname: @, value: mail.yourdomain.com)
+#### 2. create mx record to point to mail.yourdomain.com (hostname: **@**, value: **mail.yourdomain.com**)
 
-### 3. create CNAME:- name: autodiscover value: mail.yourdomain.com
-### 4. create CNAME:- name: autoconfig value: mail.yourdomain.com
+#### 3. create **CNAME**:- name: **autodiscover** value: **mail.yourdomain.com**
+#### 4. create **CNAME**:- name: **autoconfig** value: **mail.yourdomain.com**
 
-### 5. create txt records
+#### 5. create txt records
 ```bash
-1. @                =>	"v=spf1 mx a -all"
-2. dkim._domainkey	=>	"v=DKIM1; k=rsa; t=s; s=email; p=..."
-3. _dmarc           =>	"v=DMARC1; p=reject; rua=mailto:mailauth-reports@mail.yourdomain.com"
+1. @                => "v=spf1 mx a -all"
+2. dkim._domainkey  => "v=DKIM1; k=rsa; t=s; s=email; p=..."
+3. _dmarc           => "v=DMARC1; p=reject; rua=mailto:mailauth-reports@mail.yourdomain.com"
 ```
 ### 3. Run the Script
 1. Configure Nginx

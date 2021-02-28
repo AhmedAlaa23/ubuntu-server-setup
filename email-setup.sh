@@ -142,7 +142,7 @@ inet_protocols = ipv4
 
 
 #*======= Pull the images and run the compose file.
-echo "Pull the images and run the compose file"
+echo "__ Pulling the images and run the compose file"
 sudo docker-compose pull
 sudo docker-compose up -d
 
