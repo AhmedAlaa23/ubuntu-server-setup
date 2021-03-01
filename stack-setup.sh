@@ -31,6 +31,16 @@ then
 	echo "__ Installing Nginx"
 	sudo apt install -y nginx
 	systemctl status nginx
+
+	echo "__ Uncommenting 'server_names_hash_bucket_size 64'"
+	sudo sed -i '/	# server_names_hash_bucket_size 64;/c\	server_names_hash_bucket_size 64;' /etc/nginx/nginx.conf
+
+	echo "__ Checking Nginx"
+	sudo nginx -t
+
+	echo "__ Restarting Nginx"
+	sudo systemctl restart nginx
+
 	echo "__ Nginx Installed"
 fi
 

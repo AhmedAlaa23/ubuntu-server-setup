@@ -43,14 +43,10 @@ curl -o domain-setup.sh -s https://raw.githubusercontent.com/AhmedAlaa23/ubuntu-
 
 <br/>
 
-## Apps (clone from github and add/configure to server)
-1. Clone the App from github to the server (www)
-2. Run the App if it's runnable
-3. Add it's location to Nginx
-
+## Apps (Setup Github Action)
 
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/AhmedAlaa23/ubuntu-server-setup/main/app-setup.sh)
+curl -o app-setup.sh -s https://raw.githubusercontent.com/AhmedAlaa23/ubuntu-server-setup/main/app-setup.sh && bash app-setup.sh
 ```
 
 <br/>
