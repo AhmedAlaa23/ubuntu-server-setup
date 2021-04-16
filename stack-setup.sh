@@ -65,7 +65,10 @@ then
 	fi
 
 	echo "__ Enter the sudo Pass below"
-	sudo mysql --user='root' -p --execute='CREATE USER IF NOT EXISTS '$MYSQL_USER_NAME'@'localhost' IDENTIFIED WITH '$MYSQL_USER_PLUGIN' BY "$MYSQL_USER_PASS"; GRANT ALL PRIVILEGES ON *.* TO '$MYSQL_USER_NAME'@'localhost' WITH GRANT OPTION; USE mysql; SELECT user, host, plugin from user; FLUSH PRIVILEGES;'
+	# sudo mysql --user='root' -p --execute='CREATE USER IF NOT EXISTS '$MYSQL_USER_NAME'@'localhost' IDENTIFIED WITH '$MYSQL_USER_PLUGIN' BY "$MYSQL_USER_PASS"; GRANT ALL PRIVILEGES ON *.* TO '$MYSQL_USER_NAME'@'localhost' WITH GRANT OPTION; USE mysql; SELECT user, host, plugin from user; FLUSH PRIVILEGES;'
+	sudo mysql --user='root' -p --execute='CREATE USER IF NOT EXISTS '$MYSQL_USER_NAME'@'localhost' IDENTIFIED BY "$MYSQL_USER_PASS"; GRANT ALL PRIVILEGES ON *.* TO '$MYSQL_USER_NAME'@'localhost' WITH GRANT OPTION; USE mysql; SELECT user, host, plugin from user; FLUSH PRIVILEGES;'
+	sudo mysql --user='root' -p --execute='SET GLOBAL sql_mode = 'NO_ENGINE_SUBSTITUTION'; SET SESSION sql_mode = 'NO_ENGINE_SUBSTITUTION';'
+	SET GLOBAL sql_mode = 'NO_ENGINE_SUBSTITUTION'; SET SESSION sql_mode = 'NO_ENGINE_SUBSTITUTION';
 	echo "__ Checking That mysql service is running"
 	systemctl status mysql.service
 fi

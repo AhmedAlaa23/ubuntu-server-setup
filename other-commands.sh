@@ -9,3 +9,10 @@ scp -r user@yourserver.com:~/file.tar.gz /c/Users/ahmed/Desktop/file.tar.gz
 
 #* download file from server to local
 scp -r /c/Users/ahmed/Desktop/file.tar.gz user@yourserver.com:~/file.tar.gz
+
+#* =========== Database Commands
+#* show users
+USE mysql; SELECT user, host, plugin from user;
+
+#* show databases
+SHOW DATABASES;
