@@ -43,7 +43,7 @@ server {
 		proxy_set_header Upgrade \$http_upgrade;
 		proxy_set_header Connection \"up grade\";
 
-		proxy_pass http://$DOMAIN_NAME/;
+		proxy_pass http://localhost:$PORT_PORT;
 		proxy_redirect off;
 		proxy_read_timeout 240s;
 	}
